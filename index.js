@@ -12,9 +12,12 @@ function choseShape(Shape,ShapeColor,Text,TextColor) {
   else if (shape === 'square'){
     newShape = new Square(ShapeColor,Text,TextColor);
   }
+  else if (shape === 'circle'){
+    newShape = new Circle(ShapeColor,Text,TextColor);
+  }
 
 
-  fs.writeFile("logo.svg", newShape.render(), function (err) {
+  fs.writeFile("./logos/logo.svg", newShape.render(), function (err) {
     if (err) {
       throw err;
     }
@@ -27,9 +30,11 @@ function questions() {
   inquirer
     .prompt([
       {
-        type:"input",
+        type:"list",
         name:"shape",
-        message:"What shape would you like your logo to be?"
+        message:"What shape would you like your logo to be?",
+        choices: ["circle","triangle", "square"]
+
       },
       {
         type:"input",
@@ -54,7 +59,12 @@ function questions() {
       },
     ])
     .then(function (response) {
-      choseShape("square",'blue');
+      let chosenShape = response.shape.toLowerCase();
+      let shapeColor = response.shapeColor.toLowerCase();
+      let chosenLetters = response.letters.toUpperCase();
+      let letterColor = response.letterColor.toLowerCase();
+      console.log(chosenShape,shapeColor,chosenLetters,letterColor);
+      choseShape(chosenShape,shapeColor,chosenLetters,letterColor);
       
       });
     };
