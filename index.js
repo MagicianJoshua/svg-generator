@@ -21,7 +21,7 @@ function choseShape(Shape,ShapeColor,Text,TextColor) {
     if (err) {
       throw err;
     }
-    console.log("saved");
+    console.log("SVG File generated");
   
   })
 }
@@ -63,9 +63,8 @@ function questions() {
       let shapeColor = response.shapeColor.toLowerCase();
       let chosenLetters = response.letters.toUpperCase();
       let letterColor = response.letterColor.toLowerCase();
-      console.log(chosenShape,shapeColor,chosenLetters,letterColor);
       choseShape(chosenShape,shapeColor,chosenLetters,letterColor);
-      
+      console.log("SVG Genereted");
       });
     };
 

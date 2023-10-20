@@ -1,3 +1,3 @@
-<svg width="200" height="200"> 
-        <polygon points="100,0 160,100, 40,100" fill="black"/>
-        <text x="100" y="70" font-family="arial" font-size="30" fill="yellow" alignment-baseline="middle" text-anchor="middle" >TYO</text>
+<svg width="200" height="200">
+        <circle cx="100" cy="100" r="50" fill="green" stroke-width="1"/>
+        <text x="100" y="103" font-family="arial" font-size="40" fill="white" alignment-baseline="middle" text-anchor="middle" >SVG</text>
